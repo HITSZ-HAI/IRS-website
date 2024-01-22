@@ -1,0 +1,621 @@
+
+<!-- saved from url=(0035)https://vis-www.cs.umass.edu/3dllm/ -->
+<html class="wf-roboto-n3-active wf-roboto-n4-active wf-ubuntu-n7-active wf-lato-i1-active wf-bungeeoutline-n4-active wf-roboto-n5-active wf-opensans-i6-active wf-opensans-i3-active wf-opensans-i4-active wf-opensans-i8-active wf-opensans-i7-active wf-lato-n1-active wf-lato-i3-active wf-varelaround-n4-active wf-lato-i9-active wf-lato-i4-active wf-lato-n7-active wf-lato-n9-active wf-ubuntu-i7-active wf-ubuntu-i3-active wf-ubuntu-i5-active wf-changaone-i4-active wf-montserrat-i4-active wf-montserrat-i5-active wf-montserrat-i2-active wf-montserrat-i7-active wf-montserrat-i1-active wf-montserrat-i9-active wf-montserrat-i6-active wf-montserrat-i3-active wf-montserrat-i8-active wf-lato-n4-active wf-ubuntu-n5-active wf-lato-n3-active wf-ubuntu-n4-active wf-montserrat-n7-active wf-montserrat-n4-active wf-montserrat-n1-active wf-montserrat-n3-active wf-montserrat-n6-active wf-montserrat-n2-active wf-montserrat-n5-active wf-montserrat-n8-active wf-montserrat-n9-active wf-ubuntu-n3-active wf-lato-i7-active wf-bungeeshade-n4-active wf-changaone-n4-active wf-ubuntu-i4-active wf-opensans-n3-active wf-opensans-n4-active wf-opensans-n6-active wf-opensans-n7-active wf-opensans-n8-active wf-active"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Google tag (gtag.js) -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-FYQNRK8LHK"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-FYQNRK8LHK');
+    </script> -->
+
+
+    <title>IRS: A Large Synthetic Indoor Robotics Stereo Dataset for Disparity and Surface Normal Estimation</title>
+
+    <meta content="" name="description">
+    <meta content="" property="og:title">
+    <meta content="" property="og:description">
+    <meta content="http://lerf.io/data/lerf_meta_img.jpg" property="og:image">
+    <meta content="" property="twitter:title">
+    <meta content="" property="twitter:description">
+    <meta content="http://lerf.io/data/lerf_meta_img.jpg" property="twitter:image">
+    <meta property="og:type" content="website">
+    <meta content="summary_large_image" name="twitter:card">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+
+
+    <link href="https://fonts.googleapis.com/" rel="preconnect">
+    <link href="https://fonts.gstatic.com/" rel="preconnect" crossorigin="anonymous">
+    <script src="./IRS A Large Synthetic Indoor Robotics Stereo Dataset for Disparity and Surface Normal Estimation/webfont.js.下载" type="text/javascript"></script>
+    <link rel="stylesheet" href="./IRS A Large Synthetic Indoor Robotics Stereo Dataset for Disparity and Surface Normal Estimation/css" media="all"><script type="text/javascript">WebFont.load({ google: { families: ["Lato:100,100italic,300,300italic,400,400italic,700,700italic,900,900italic", "Montserrat:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic", "Ubuntu:300,300italic,400,400italic,500,500italic,700,700italic", "Open Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic", "Changa One:400,400italic", "Varela Round:400", "Bungee Shade:regular", "Roboto:300,regular,500", "Bungee Outline:regular"] } });</script>
+    <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" type="text/javascript"></script><![endif]-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.ript" >
+        <script src="./ZeroClipboard.js"></script>
+    <script src="./IRS A Large Synthetic Indoor Robotics Stereo Dataset for Disparity and Surface Normal Estimation/jquery.min.js.下载"></script>
+    <script src="./IRS A Large Synthetic Indoor Robotics Stereo Dataset for Disparity and Surface Normal Estimation/script.js.下载" type="text/javascript"></script>
+
+    <link href="./IRS A Large Synthetic Indoor Robotics Stereo Dataset for Disparity and Surface Normal Estimation/style.css" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" href="./IRS A Large Synthetic Indoor Robotics Stereo Dataset for Disparity and Surface Normal Estimation/font-awesome.min.css">
+    <script>
+        function setImageGLIDE(select) {
+            var image = document.getElementsByName("image-swap-1")[0];
+            image.src = select.options[select.selectedIndex].value;
+        }
+        function setImageStable(select) {
+            var image = document.getElementsByName("image-swap-2")[0];
+            image.src = select.options[select.selectedIndex].value;
+        }
+        function copyCode() {
+            const codeElement = document.getElementById("myText");
+            const code = codeElement.innerText;
+
+            navigator.clipboard.writeText(code)
+                .then(() => {
+                    alert("Code copied to clipboard!");
+                })
+                .catch((error) => {
+                    console.error("Failed to copy code: ", error);
+                });
+        }
+    </script>
+    <style type="text/css">.new-prompt[data-v-be061d42]{position:fixed;z-index:99999;background:rgba(0,0,0,.6);top:0;left:0;right:0;bottom:0;cursor:auto}.new-prompt dialog[data-v-be061d42]{width:380px;position:absolute;left:50%;transform:translate(-50%,-50%);top:50%;border:none;border-radius:5px;padding:10px 20px;margin:0}.new-prompt p[data-v-be061d42]{margin:20px 0 5px}.new-prompt input[data-v-be061d42]{height:25px}.new-prompt input[data-v-be061d42],.new-prompt textarea[data-v-be061d42]{width:100%;border:1px solid #d9d9d9;border-radius:5px}.new-prompt dialog svg[data-v-be061d42]{float:right;cursor:pointer}.new-prompt button[data-v-be061d42]{border-radius:5px;width:60px;height:28px;margin:20px 10px;cursor:pointer}.cancel-btn[data-v-be061d42]{background:#fff;border:1px solid #d9d9d9}.sure-btn[data-v-be061d42]{border:none;background:#7f85ef;color:#fff}.btn-div[data-v-be061d42]{text-align:right}.pro-title[data-v-be061d42]{font-size:16px;font-weight:600;text-align:center}.input-text[data-v-be061d42]{padding:0 0 0 5px}.textarea-text[data-v-be061d42]{padding:5px 0 0 5px}</style><style type="text/css">.message-box[data-v-3436135a]{position:fixed;top:20px;left:50%;transform:translateX(-50%);z-index:99999;width:80%;padding:10px 20px;border-radius:4px;background-color:#f0f0f0;box-shadow:0 2px 4px rgba(0,0,0,.2)}.message-text[data-v-3436135a]{margin-right:8px}.message-info[data-v-3436135a]{color:#35495e}.message-success[data-v-3436135a]{color:#67c23a;background-color:#f2f9ec}.message-warning[data-v-3436135a]{color:#e6a23c}.message-error[data-v-3436135a]{color:#f56c6c}.el-icon-close[data-v-3436135a]{cursor:pointer;margin-left:8px}</style><style>#ai_assistant .popver[refresh]::after {
+        content: "刷新";
+    }#ai_assistant .popver[copy]::after {
+         content: "复制";
+     }#ai_assistant .popver[expandSidebar]::after {
+          content: "展开侧边栏";
+      }#ai_assistant .popver[setting]::after {
+           content: "设置";
+       }
+    .code-container {
+        position: relative;
+        background-color: #f1f1f1;
+        padding: 10px;
+    }
+
+    .copy-button {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 5px;
+        background-color: #555;
+        color: #fff;
+        cursor: pointer;
+    }
+    </style>
+</head>
+
+
+
+
+<body>
+<div class="section">
+    <div class="container">
+        <div class="title-row">
+            <h1 class="title">
+                <a style="color:#2a9d8f;">I</a><a style="color:#8AB17D;">R</a><a style="color:#e9c46a">S</a>
+            </h1>
+            <h1 class=" subheader"> A Large Synthetic Indoor Robotics Stereo Dataset for Disparity and Surface Normal Estimation
+            </h1>
+        </div>
+
+        <div class="base-row author-row" style="align-items: center;">
+            <div class="base-col author-col">
+                <a target="_blank" class="author-text">
+                    Q. Wang<sup>*,1</sup>
+                </a>
+            </div>
+            <div class="base-col author-col">
+                <a target="_blank" class="author-text">
+                    S. Zheng<sup>*,1</sup>
+                </a>
+            </div>
+            <div class="base-col author-col">
+                <a target="_blank" class="author-text">
+                    Q. Yan<sup>*,2</sup>
+                </a>
+            </div>
+            <div class="base-col author-col">
+                <a target="_blank" class="author-text">
+                    F. Deng<sup>2</sup>
+                </a>
+            </div>
+        </div>
+        <br>
+        <div class="base-row author-row">
+            <div class="base-col author-col">
+                <a  target="_blank" class="author-text">
+                    K. Zhao<sup>†,1</sup>
+                </a>
+            </div>
+            <div class="base-col author-col">
+                <a  target="_blank" class="author-text">
+                    X. Chu<sup>†,1</sup>
+                </a>
+            </div>
+        </div>
+
+        <br>
+        <div class="link-labels base-row">
+            <!-- TODO: Update arxiv link -->
+            <div class="base-col icon-col"><a href="https://arxiv.org/abs/1912.09678" target="_blank" class="link-block"><img src="./IRS A Large Synthetic Indoor Robotics Stereo Dataset for Disparity and Surface Normal Estimation/paper1.png" alt="paper" sizes="(max-width: 479px) 12vw, (max-width: 767px) 7vw, (max-width: 991px) 41.8515625px, 56.6953125px" srcset="https://uploads-ssl.webflow.com/51e0d73d83d06baa7a00000f/5cab99df4998decfbf9e218e_paper-01-p-500.png 500w, https://uploads-ssl.webflow.com/51e0d73d83d06baa7a00000f/5cab99df4998decfbf9e218e_paper-01.png 672w" class="icon-img"></a></div>
+            <!-- TODO: Update code link -->
+            <div class="base-col icon-col"><a href="https://github.com/blackjack2015/IRS/tree/master" class="link-block"><img src="./IRS A Large Synthetic Indoor Robotics Stereo Dataset for Disparity and Surface Normal Estimation/code.png" alt="code" class="icon-img github-img-icon"></a></div>
+        </div>
+        <div class="link-labels base-row">
+            <div class="base-col icon-col">
+                <strong class="link-labels-text">Paper</strong>
+            </div>
+            <div class="base-col icon-col">
+                <strong class="link-labels-text"> Code </strong>
+            </div>
+        </div>
+
+        <br> <br>
+        <h1> Video Demonstration </h1>
+        <br> <br>
+
+        <video id="main-video" controls="" loop="" autoplay="" muted="">
+            <source src="data/IRS_ Indoor Robtics Stereo Dataset(compressed).mp4" type="video/mp4">
+        </video>
+
+        <br> <br>
+        <h1 id="abstract">Introduction</h1>
+        <br> <br>
+
+        <p class="paragraph">
+            <b> IRS </b>
+            is an open dataset for <b> indoor robotics vision tasks </b>, especially disparity and surface normal estimation.
+            It is generated by a customized advanced rendering engine that simulates various visual effects such as brightness changes, light reflection/transmission, lens flare, and vivid shadow.
+            it is designed to provide a training dataset for deep learning models to infer surface normal and disparity from stereo images. The dataset contains totally 103,316 samples
+            covering a wide range of indoor scenes, such as <b> home, office, store and restaurant. </b>
+        </p>
+
+        <table width="100%">
+            <tbody><tr>
+                <td align="left" valign="top" width="50%">
+                    <img src="./IRS A Large Synthetic Indoor Robotics Stereo Dataset for Disparity and Surface Normal Estimation/left.png" alt="left" style="width: 90%; margin-top:2em">
+                </td>
+                <td align="left" valign="top" width="50%">
+                    <img src="./IRS A Large Synthetic Indoor Robotics Stereo Dataset for Disparity and Surface Normal Estimation/right.png" alt="right" style="width: 90%; margin-top:2em">
+                </td>
+            </tr>
+            </tbody></table>
+
+        <table width="100%">
+            <tbody><tr>
+                <td align="center" valign="top" width="50%">
+                    <b>Left image</b>
+                </td>
+                <td align="center" valign="top" width="50%">
+                    <b>Right image</b>
+                </td>
+            </tr>
+            </tbody></table>
+
+        <table width="100%">
+            <tbody><tr>
+                <td align="left" valign="top" width="50%">
+                    <img src="./IRS A Large Synthetic Indoor Robotics Stereo Dataset for Disparity and Surface Normal Estimation/disparity.png" alt="disparity" style="width: 90%; margin-top:2em">
+                </td>
+                <td align="left" valign="top" width="50%">
+                    <img src="./IRS A Large Synthetic Indoor Robotics Stereo Dataset for Disparity and Surface Normal Estimation/normal.png" alt="normal" style="width: 90%; margin-top:2em">
+                </td>
+            </tr>
+            </tbody></table>
+
+        <table width="100%">
+            <tbody><tr>
+                <td align="center" valign="top" width="50%">
+                    <b>Disparity map</b>
+                </td>
+                <td align="center" valign="top" width="50%">
+                    <b>Surface normal map</b>
+                </td>
+            </tr>
+            </tbody></table>
+
+        <br> <br>
+        <h1> Overview of IRS </h1>
+        <br> <br>
+
+        <table id="hor-minimalist-a" border="1" summary="IRS table" cellpadding="10" cellspacing="0">
+            <tr>
+                <th align="center"  scope="col" width="25%"> Rendering Characteristic	</th>
+                <th align="center"  scope="col" width="65%"> Options </th>
+            </tr>
+            <tbody>
+            <tr>
+                <td align="center" width="25%"> indoor scene class </td>
+                <td align="center" width="65%"> home(31145), office(43417), restaurant(22058), store(6696) </td>
+            </tr>
+            <tr>
+                <td align="center" width="25%"> object class	</td>
+                <td align="center" width="65%"> desk, chair, sofa, glass, mirror, bed, bedside table, lamp, wardrobe, etc. </td>
+            </tr>
+            <tr>
+                <td align="center" width="25%"> brightness </td>
+                <td align="center" width="65%"> over-exposure(>1300), darkness(>1700) </td>
+            </tr>
+            <tr>
+                <td align="center" width="25%"> light behavior </td>
+                <td align="center" width="65%"> bloom(>1700), lens flare(>1700), glass transmission(>3600), mirror reflection(>3600) </td>
+            </tr>
+            </tbody>
+        </table>
+
+        <br> <br>
+        <h1> Sample display </h1>
+        <br> <br>
+
+        <p class="paragraph">
+            We give some sample of different indoor scene characteristics as follows. The parameters of the virtual stereo camera in UE4 are as follows:
+        <ul>
+
+            <li> <p class="paragraph"> Baseline: 0.1 meter.  </p> </li>
+            <li> <p class="paragraph"> Focal Length: 480 for both the x-axis and y-axis. </p> </li>
+
+        </ul>
+        </p>
+
+        <table>
+            <tbody><tr>
+                <td width>
+                    <img width="30%" src="./IRS A Large Synthetic Indoor Robotics Stereo Dataset for Disparity and Surface Normal Estimation/home.png" alt="home" style="width: 90%; margin-top:2em">
+                </td>
+                <td width>
+                    <img width="30%" src="./IRS A Large Synthetic Indoor Robotics Stereo Dataset for Disparity and Surface Normal Estimation/Office.png" alt="Office" style="width: 90%; margin-top:2em">
+                </td>
+                <td width>
+                    <img width="30%" src="./IRS A Large Synthetic Indoor Robotics Stereo Dataset for Disparity and Surface Normal Estimation/Restaurant.png" alt="Restaurant" style="width: 90%; margin-top:2em">
+                </td>
+            </tr>
+            </tbody></table>
+
+        <table width="100%">
+            <tbody><tr>
+                <td align="center" valign="top" width="33%">
+                    <b>Home</b>
+                </td>
+                <td align="center" valign="top" width="33%">
+                    <b>Office</b>
+                </td>
+                <td align="center" valign="top" width="33%">
+                    <b>Restaurant</b>
+                </td>
+            </tr>
+            </tbody></table>
+
+        <table>
+            <tbody><tr>
+                <td>
+                    <img width="30%" src="./IRS A Large Synthetic Indoor Robotics Stereo Dataset for Disparity and Surface Normal Estimation/normal_light.png" alt="normal_light" style="width: 90%; margin-top:2em">
+                </td>
+                <td>
+                    <img width="30%" src="./IRS A Large Synthetic Indoor Robotics Stereo Dataset for Disparity and Surface Normal Estimation/over_exposure.png" alt="over_exposure" style="width: 90%; margin-top:2em">
+                </td>
+                <td>
+                    <img width="30%" src="./IRS A Large Synthetic Indoor Robotics Stereo Dataset for Disparity and Surface Normal Estimation/dark.png" alt="dark" style="width: 90%; margin-top:2em">
+                </td>
+            </tr>
+            </tbody></table>
+
+        <table width="100%">
+            <tbody><tr>
+                <td align="center" valign="top" width="30%">
+                    <b>Normal light</b>
+                </td>
+                <td align="center" valign="top" width="30%">
+                    <b>Over exposure</b>
+                </td>
+                <td align="center" valign="top" width="30%">
+                    <b>Darkness</b>
+                </td>
+            </tr>
+            </tbody></table>
+
+        <table>
+            <tbody><tr>
+                <td width="30%">
+                    <img width="30%" src="./IRS A Large Synthetic Indoor Robotics Stereo Dataset for Disparity and Surface Normal Estimation/Glass.png" alt="Glass" style="width: 90%; margin-top:2em">
+                </td>
+                <td width="30%">
+                    <img width="30%" src="./IRS A Large Synthetic Indoor Robotics Stereo Dataset for Disparity and Surface Normal Estimation/mirror.png" alt="mirror" style="width: 90%; margin-top:2em">
+                </td>
+                <td width="30%">
+                    <img width="30%" src="./IRS A Large Synthetic Indoor Robotics Stereo Dataset for Disparity and Surface Normal Estimation/metal.png" alt="metal" style="width: 90%; margin-top:2em">
+                </td>
+            </tr>
+            </tbody></table>
+
+        <table width="100%">
+            <tbody><tr>
+                <td align="center" valign="top" width="30%">
+                    <b>Glass</b>
+                </td>
+                <td align="center" valign="top" width="30%">
+                    <b>Mirror</b>
+                </td>
+                <td align="center" valign="top" width="30%">
+                    <b>Metal</b>
+                </td>
+            </tr>
+            </tbody></table>
+
+        <br><br>
+        <h1>
+            Network Structure of DispNormNet
+        </h1>
+        <br><br>
+
+
+        <p class="paragraph">
+            We design a novel network, namely  <b> DispNormNet </b>, to estimate the disparity map and surface normal map together of the input stereo images. DispNormNet is comprised of two modules,
+            DispNetC and NormNetDF. <a href="https://arxiv.org/pdf/1512.02134.pdf"> DispNetC </a> is identical to that in <a href="https://arxiv.org/pdf/1512.02134.pdf"> this paper </a> and produces the disparity map.
+            NormNetDF produces the normal map and is similar to <a href="https://arxiv.org/pdf/1512.02134.pdf"> DispNetS </a>. "DF" indicates
+            disparity feature fusion, which we found important to produce accurate surface normal maps.
+        </p>
+
+        <img src="./IRS A Large Synthetic Indoor Robotics Stereo Dataset for Disparity and Surface Normal Estimation/DispNormNet.png" alt="DispNormNet" style="width: 90%; margin-top:2em">
+        <table width="100%">
+            <tbody><tr>
+                <td align="center" valign="top" width="30%">
+                    <b> DispNormNet </b>
+                </td>
+            </tr>
+            </tbody></table>
+
+        <br> <br>
+        <h1>
+            Paper
+        </h1>
+        <br> <br>
+        <p class="paragraph"> The <a href="https://arxiv.org/abs/2303.09553" > link </a> has been provided at the beginning of our website.  </p>
+        <img src="./IRS A Large Synthetic Indoor Robotics Stereo Dataset for Disparity and Surface Normal Estimation/Paper.png" alt="Paper" style="width: 90%; margin-top:2em">
+        <p class="paragraph">
+            <sup> * </sup> indicates equal contribution. <sup> † </sup> indicates corresponding authors.
+            <br>
+            <sup> 1 </sup>indicates Department of Computer Science, Hong Kong Baptist University. <sup> 2 </sup>indicates School of Geodesy and Geomatics, Wuhan University.
+        </p>
+
+        <br><br>
+        <h1>
+            Download
+        </h1>
+        <br><br>
+        <p class="paragraph">
+            You can use the following <a href="https://pan.baidu.com/s/1iWZt3JklcX5iXdQqotY4uA"> BaiduYun link </a> (code:gxlw) , <a href="https://drive.google.com/drive/folders/1s6zUHkyQdCfxIq4OVzCp1CI6-_e4kGtu"> Google Drive </a> and <a href="https://lifehkbueduhk-my.sharepoint.com/personal/15484211_life_hkbu_edu_hk/_layouts/15/onedrive.aspx?id=%2Fpersonal%2F15484211%5Flife%5Fhkbu%5Fedu%5Fhk%2FDocuments%2FIRS&ga=1"> OneDrive </a> to download our dataset.
+            <br> Tips for Google Drive:
+        <ul>
+            <li> <p class="paragraph"> Go to <a href="https://www.oauth.com/playground/" > OAuth 2.0 Playground. </a> </p> </li>
+            <li> <p class="paragraph"> In the Select the Scope box, paste "https://www.googleapis.com/auth/drive.readonly". </p> </li>
+            <li> <p class="paragraph"> Click Authorize APIs and then Exchange authorization code for tokens. </p> </li>
+            <li> <p class="paragraph"> Copy the Access token. </p> </li>
+            <li> <p class="paragraph"> Run in terminal: </p> </li>
+            <pre id="codecell0"><code class="fa-code" id="myText" rows="4" cols="200" > <b> curl -H "Authorization: Bearer ACCESS_TOKEN" https://www.googleapis.com/drive/v3/files/FILE_ID?alt=media -o FILE_NAME </b> </code></pre>
+        </ul>
+
+        <br> <br>
+        <h1> Usage </h1>
+        <br>
+        <h2> Dependencies </h2>
+        <br>
+        <table id="hor-minimalist-a" align="center"  border="1" summary="IRS table" cellpadding="10" cellspacing="0">
+            <tr>
+                <th align="center"  scope="col" width="24%"> <a href="https://www.python.org/downloads/" >Python 3.7 </a> </th>
+                <th align="center"  scope="col" width="24%"> <a href="https://pytorch.org/" >PyTorch 1.6.0+ </a> </th>
+                <th align="center"  scope="col" width="24%"> <a href="https://pypi.org/project/torchvision/" >torchvision 0.2.0 </a> </th>
+                <th align="center"  scope="col" width="24%"> <a href="https://developer.nvidia.com/cuda-downloads" >CUDA 10.1 </a> </th>
+            </tr>
+        </table>
+
+
+        <br>
+        <h2> Install </h2>
+        <br>
+
+        <p class="paragraph">
+            Use the following commands to install the environment in Linux:
+        </p>
+        <div class="citation add-top-padding">
+            <h1 id="abstract"> Code </h1>
+            <pre id="codecell0">
+        <code class="fa-code" id="myText" rows="4" cols="200"> <b>
+cd layers_package
+./install.sh
+# install OpenEXR (https://www.openexr.com/)
+sudo apt-get update
+sudo apt-get install openexr
+        </b> </code>
+        </pre>
+        </div>
+
+        <br> <h2> Dataset </h2><br>
+        <p class="paragraph">
+            Download IRS dataset from <a href="https://pan.baidu.com/s/1iWZt3JklcX5iXdQqotY4uA"></a> this. Extract zip files and put them in correct folder:
+        </p>
+        <div class="citation add-top-padding">
+            <h1 id="abstract"> Folder </h1>
+            <pre id="codecell0">
+        <code class="fa-code" id="myText" rows="4" cols="200"> <b>
+data
+└── IRSDataset
+    ├── Home
+    ├── Office
+    ├── Restaurant
+    └── Store
+        </b> </code>
+        </pre>
+        </div>
+
+        <br>  <h2> Train </h2><br>
+        <p class="paragraph">
+            There are configurations for train in <b>"exp_configs"</b> folder. You can create your own configuration file as samples.
+            As an example, following configuration can be used to train a DispNormNet on IRS dataset:
+        </p>
+        <div class="citation add-top-padding">
+            <h1 id="abstract"> ./exp_configs/dispnormnet.conf</h1>
+            <pre id="codecell0">
+        <code class="fa-code" id="myText" rows="4" cols="200"> <b>
+net=dispnormnet
+loss=loss_configs/dispnetcres_irs.json
+outf_model=models/${net}-irs
+logf=logs/${net}-irs.log
+
+lr=1e-4
+devices=0,1,2,3
+
+dataset=irs #sceneflow, irs, sintel
+trainlist=lists/IRSDataset_TRAIN.list
+vallist=lists/IRSDataset_TEST.list
+
+startR=0
+startE=0
+endE=10
+batchSize=16
+maxdisp=-1
+model=none
+        </b> </code>
+        </pre>
+        </div>
+        <p class="paragraph">
+            Then, the configuration should be specified in the "train.sh":
+        </p>
+        <div class="citation add-top-padding">
+            <h1 id="abstract"> ./train.sh </h1>
+            <pre id="codecell0">
+        <code class="fa-code" id="myText" rows="4" cols="200"> <b>
+dnn="${dnn:-dispnormnet}"
+source exp_configs/$dnn.conf
+
+python main.py --cuda --net $net --loss $loss --lr $lr \
+               --outf $outf_model --logFile $logf \
+               --devices $devices --batch_size $batchSize \
+               --dataset $dataset --trainlist $trainlist --vallist $vallist \
+               --startRound $startR --startEpoch $startE --endEpoch $endE \
+               --model $model \
+               --maxdisp $maxdisp \
+               --manualSeed 1024 \
+        </b> </code>
+        </pre>
+        </div>
+
+        <p class="paragraph">
+            Lastly, use the command <code><b>./train.sh </b> </code> to start a train
+        </p>
+
+        <br> <h2> Evaluation </h2><br>
+        <p class="paragraph">
+            There is a script for evaluation with a model from a train
+        </p>
+        <p class="paragraph">
+            Then, the configuration should be specified in the <b>"train.sh"</b>:
+        </p>
+        <div class="citation add-top-padding">
+            <h1 id="abstract"> ./detech.sh </h1>
+            <pre id="codecell0">
+        <code class="fa-code" id="myText" rows="4" cols="200" align="left"> <b>
+dataset=irs
+net=dispnormnet
+
+model=models/dispnormnet-irs/model_best.pth
+outf=detect_results/${net}-${dataset}/
+
+filelist=lists/IRSDataset_TEST.list
+filepath=data
+
+CUDA_VISIBLE_DEVICES=0 python detecter.py --model $model --rp $outf --filelist $filelist --filepath $filepath --devices 0 --net ${net} --disp-on --norm-on
+        </b> </code>
+        </pre>
+        </div>
+
+        <p class="paragraph">
+            Use the script in your configuration, and then get result in detect_result folder.<br><br>
+
+            Disparity results are saved in png format as default.<br>
+            Normal results are saved in exr format as default.<br><br>
+
+            If you want to change the output format, you need to modify "detecter.py" and use save function as follow:
+        </p>
+
+        <div class="citation add-top-padding">
+            <h1 id="abstract"> function </h1>
+            <pre id="codecell0">
+        <code class="fa-code" id="myText" rows="4" cols="200" align="left"> <b>
+# png
+skimage.io.imsave(filepath, image)
+
+# pfm
+save_pfm(filepath, data)
+
+# exr
+save_exr(data, filepath)
+        </b> </code>
+        </pre>
+        </div>
+
+        <br>
+        <h2> Typicle Example on IRS </h2>
+        <br>
+        <p class="paragraph">
+            In figure below illustrates some typical examples of disparity maps predicted
+            by <b> DN-CSS-SF</b> and <b> DN-CSS-IRS </b> on our IRS dataset:
+        </p>
+        <img src="./IRS A Large Synthetic Indoor Robotics Stereo Dataset for Disparity and Surface Normal Estimation/result.png" alt="result" style="width: 90%; margin-top:2em">
+        <table width="100%">
+            <tbody><tr>
+                <td align="center" valign="top" width="30%">
+                    <b> Disparity Prediction Results on Synthetic Images. </b>
+                </td>
+            </tr>
+            </tbody></table>
+
+        <br><br>
+        <h2> And More.. </h2>
+        <br>
+
+        <table width="100%">
+            <tbody><tr>
+                <td align="left" valign="top" width="50%">
+                    <img src="./IRS A Large Synthetic Indoor Robotics Stereo Dataset for Disparity and Surface Normal Estimation/result1.png" alt="left" style="width: 90%; margin-top:2em">
+                </td>
+                <td align="left" valign="top" width="50%">
+                    <img src="./IRS A Large Synthetic Indoor Robotics Stereo Dataset for Disparity and Surface Normal Estimation/result2.png" alt="right" style="width: 90%; margin-top:2em">
+                </td>
+            </tr>
+            </tbody></table>
+
+        <table width="100%">
+            <tbody><tr>
+                <td align="center" valign="top" width="50%">
+                    <b>Surface Normal Prediction Results on Synthetic Images.</b>
+                </td>
+                <td align="center" valign="top" width="50%">
+                    <b>Disparity Prediction Results of DispNormNet on Real World Images.</b>
+                </td>
+            </tr>
+            </tbody></table>
+        <br>
+        <h2> EXR Viewer </h2>
+        <br>
+        <p class="paragraph">
+            For viewing files in exr format, we recommand a free <a href="https://renderdoc.org/"> software </a>
+        </p>
+
+        <br>        <br>
+        <h1> Contact </h1>
+        <p class="paragraph" >
+            Please contact us at <a href="https://renderdoc.org/"> qiangwang@comp.hkbu.edu.hk </a> if you have any question.
+        </p>
+    </div>
+</div>
+<br>
+<hr>
+<p align="center">
+    Thanks to <a href="https://kerrj.github.io/">Justin Kerr</a> for the <a href="https://www.lerf.io/">website
+    template</a>.
+</p>
+</body></html>

@@ -1,0 +1,38 @@
+import type MarkdownToolbarElement from '@github/markdown-toolbar-element'
+import {dialog} from '@github-ui/details-dialog'
+// eslint-disable-next-line no-restricted-imports
+import {on} from 'delegated-events'
+
+const selectionEnds = new WeakMap()
+
+function getTextarea(el: HTMLElement): HTMLTextAreaElement {
+  return el.closest<MarkdownToolbarElement>('markdown-toolbar')!.field!
+}
+
+on('click', '.js-markdown-link-button', async function ({currentTarget}) {
+  const template = document.querySelector<HTMLTemplateElement>('.js-markdown-link-dialog')!
+  const content = template.content.cloneNode(true)
+  if (!(content instanceof DocumentFragment)) return
+
+  const dialogEl = await dialog({
+    content,
+    labelledBy: 'box-title',
+  })
+  if (!(currentTarget instanceof HTMLElement)) return
+  selectionEnds.set(dialogEl, getTextarea(currentTarget).selectionEnd)
+})
+
+on('click', '.js-markdown-link-insert', ({currentTarget}) => {
+  const container = currentTarget.closest<HTMLElement>('details-dialog')!
+  const textarea = document.querySelector<HTMLTextAreaElement>(`#${currentTarget.getAttribute('data-for-textarea')!}`)!
+  const selectionEnd = selectionEnds.get(container) || 0
+
+  const href = container.querySelector<HTMLInputElement>('#js-dialog-link-href')!.value
+  const text = container.querySelector<HTMLInputElement>('#js-dialog-link-text')!.value
+  const link = `[${text}](${href}) `
+  const before = textarea.value.slice(0, selectionEnd)
+  const after = textarea.value.slice(selectionEnd)
+  textarea.value = before + link + after
+  textarea.focus()
+  textarea.selectionStart = textarea.selectionEnd = selectionEnd + link.length
+})

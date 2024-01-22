@@ -1,0 +1,98 @@
+// github.css
+
+// This CSS bundle imports the @primer/css-next styles that use CSS variables
+// Note: SASS color functions are not supported anymore
+
+// Primer CSS
+@import '../../variables/primer-static-colors.scss';
+@import '@primer/css/support/index.scss';
+@import '@primer/css/labels/mixins.scss';
+
+// Custom mixins
+@import './mixins.scss';
+
+// Custom styles
+@import './layout.scss';
+@import './marketing.scss';
+@import './integrations.scss';
+@import './account.scss';
+@import './audit-log.scss';
+@import './billing.scss';
+@import './blob.scss';
+@import './blob-editor.scss';
+@import './branch-actions.scss';
+@import './businesses.scss';
+@import './checks.scss';
+@import './code-frequency.scss';
+@import './code-list.scss';
+@import './code-scanning.scss';
+@import './code-search.scss';
+@import './codespaces.scss';
+@import './commit-acitivity.scss';
+@import './compare.scss';
+@import './contributors.scss';
+@import './coupons.scss';
+@import './dashboard.scss';
+@import './dashboard-notice.scss';
+@import './dependabot-alerts.scss';
+@import './developer.scss';
+@import './development-menu.scss';
+@import './diffs.scss';
+@import './discussions.scss';
+@import './donut-chart.scss';
+@import './enterprise.scss';
+@import './feature-preview.scss';
+@import './files.scss';
+@import './graphs.scss';
+@import './teams.scss';
+@import './hooks.scss';
+@import './hovercards.scss';
+@import './integration-installations.scss';
+@import './issue-list.scss';
+@import './issues.scss';
+@import './loading.scss';
+@import './map.scss';
+@import './marketplace.scss';
+@import './member-listings.scss';
+@import './merge-button.scss';
+@import './network-graph.scss';
+@import './new-repo.scss';
+@import './news.scss';
+@import './oauth.scss';
+@import './okta-credentials.scss';
+@import './org-invitation.scss';
+@import './org-profile.scss';
+@import './org-audit-log.scss';
+@import './org-security-settings.scss';
+@import './orgs.scss';
+@import './pages-generator.scss';
+@import './pinned-items.scss';
+@import './print.scss';
+@import './projects.scss';
+@import './profile.scss';
+@import './profile-next.scss';
+@import './pull-request.scss';
+@import './pull-request-review.scss';
+@import './readme.scss';
+@import './repo-labels.scss';
+@import './repolist.scss';
+@import './repositories.scss';
+@import './repository-images.scss';
+@import './repository.scss';
+@import './repository-items.scss';
+@import './roles.scss';
+@import './settings.scss';
+@import './two-factor-setup.scss';
+@import './setup.scss';
+@import './signup.scss';
+@import './showcases.scss';
+@import './slash-commands.scss';
+@import './sortable-button.scss';
+@import './sponsors.scss';
+@import './tab-sizes.scss';
+@import './team-grid.scss';
+@import './traffic.scss';
+@import './tracking-block.scss';
+@import './typeahead.scss';
+@import './user-content-toc.scss';
+@import './workflow-run.scss';

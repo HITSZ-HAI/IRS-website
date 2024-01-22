@@ -1,0 +1,148 @@
+// global.css
+
+// The global stylesheet will contain all reusable css. These will be both
+// libraries imported like Primer CSS. And reusable github.com modules like boxed-group.
+// For more specific stylesheets associated with pages put them in github.scss
+
+@import '../../variables/primer-static-colors.scss';
+@import '@primer/css/support/index.scss';
+@import '@primer/css/labels/mixins.scss';
+@import '../../components/deprecated/primer/utilities.scss';
+
+// Syntax theme
+// @import "github-syntax-light/lib/github-light";  // TODO: Remove npm package if not used in the future
+@import './syntax-theme-prettylights.scss';
+
+// codemirror
+@import 'codemirror/lib/codemirror';
+@import 'codemirror/addon/dialog/dialog';
+@import 'codemirror/addon/merge/merge';
+// @import "codemirror-github-light/lib/codemirror-github-light-theme"; // TODO: Remove npm package if not used in the future
+@import './syntax-theme-codemirror.scss';
+
+// details-dialog-element
+@import '@github/details-dialog-element/dist/index';
+
+// Misc libraries
+@import './user-select-contain.scss';
+
+// Other
+@import './ajax-pagination.scss';
+@import './button-outline.scss';
+@import './code-editor.scss';
+@import './custom-elements.scss';
+@import './details.scss';
+@import './emoji.scss';
+@import './gollum-editor.scss';
+
+// Custom
+@import './auth.scss';
+@import './header.scss';
+@import './header-search.scss';
+@import './mobile-enterprise-banner.scss';
+
+// Deprecated CSS from Primer or github/github
+@import '../../components/deprecated/actionlist/index.scss';
+@import '../../components/deprecated/boxed-groups.scss';
+@import '../../components/deprecated/container.scss';
+@import '../../components/deprecated/list-group.scss';
+@import '../../components/deprecated/progress-bar.scss';
+@import '../../components/deprecated/select-menu.scss';
+@import '../../components/deprecated/table-list.scss';
+
+// Components
+@import '../../components/breadcrumb.scss';
+@import '../../components/cards.scss';
+@import '../../components/collapsible-sidebar-widget.scss';
+@import '../../components/comments.scss';
+@import '../../components/commit.scss';
+@import '../../components/copyable-terminal.scss';
+@import '../../components/diffs-blobs.scss';
+@import '../../components/diffstat.scss';
+@import '../../components/discussion-timeline.scss';
+@import '../../components/footer.scss';
+@import '../../components/mentions.scss';
+@import '../../components/notifications.scss';
+@import '../../components/pagehead.scss';
+@import '../../components/page-layout.scss';
+@import '../../components/progress-steps.scss';
+@import '../../components/prose-diff.scss';
+@import '../../components/protip.scss';
+@import '../../components/reactions.scss';
+@import '../../components/render.scss';
+@import '../../components/relative-time.scss';
+@import '../../components/mathjax.scss';
+@import '../../components/skeleton-loading.scss';
+@import '../../components/avatar-stack.scss';
+@import '../../components/tracked-in-pill.scss';
+@import '../../components/single-page-wizard-step.scss';
+
+// Components & behaviors
+@import './a11y-link-underline.scss';
+@import './alerts.scss';
+@import './app-header.scss';
+@import './animated-image.scss';
+@import './emoji-picker.scss';
+@import './notifications-v2.scss';
+@import './notifications.scss';
+@import './misc.scss';
+@import './pjax-loader.scss';
+@import './repo-social-buttons.scss';
+@import './shelves.scss';
+@import './sso.scss';
+@import './status-indicator.scss';
+@import './tag-input.scss';
+@import './task-lists.scss';
+@import './toolbar.scss';
+@import './topics.scss';
+@import './user-status.scss';
+@import './command-palette.scss';
+@import './themed-picture.scss';
+@import './side-panel.scss';
+@import './links.scss';
+
+// Experiments
+@import '../../components/experimental/autocomplete.scss';
+@import '../../components/experimental/action-menu.scss';
+@import '../../components/experimental/comment-box.scss';
+@import '../../components/experimental/page-header.scss';
+@import '@github-ui/query-builder-element/query-builder.scss';
+
+// Temporary CSS overrides to Primer CSS and GitHub's CSS
+@import './hx_animations.scss';
+@import './hx_avatar-stack.scss';
+@import './hx_badges.scss';
+@import './hx_box.scss';
+@import './hx_btn.scss';
+@import './hx_browsers.scss';
+@import './hx_color-modes.scss';
+@import './hx_dropdowns.scss';
+@import './hx_focus.scss';
+@import './hx_filter-input.scss';
+@import './hx_octocat-spinner.scss';
+@import './hx_breadcrumb-header.scss';
+@import '../../components/icon-sponsor.scss';
+@import './hx_kbd.scss';
+@import './hx_search-results.scss';
+@import './hx_select-menu.scss';
+@import './hx_responsive-box.scss';
+@import './hx_responsive-dropdown.scss';
+@import '../../components/responsive-select-menu.scss';
+@import './hx_responsive-tabnav.scss';
+@import './hx_responsive-write-textarea.scss';
+@import './hx_hover-overrides.scss';
+@import './hx_utilities.scss';
+@import '../../components/toggler.scss';
+@import './hx_codemirror-yaml-fixes.scss';
+@import './hx_auto-check-component.scss';
+@import './hx_primer.scss';
+@import './hx_primer-action-list.scss';
+@import './hx_primer-labels.scss';
+@import './hx_custom.scss';
+@import './hx_memex-edit.scss';
+@import './hx_tabnav.scss';
+@import './hx_dialog-on-top-of-everything.scss';
+@import './hx_turbo-progress-bar.scss';
+@import './hx_textarea-height.scss';
+@import './hx_truncate-width-responsive.scss';
+@import './hx_markdown-highlight.scss';

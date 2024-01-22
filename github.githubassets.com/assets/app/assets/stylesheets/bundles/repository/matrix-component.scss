@@ -1,0 +1,12 @@
+$hover-transition: ease-out 0.12s;
+
+.MatrixComponent-pending {
+  // stylelint-disable-next-line primer/spacing
+  padding: 12px;
+  transition: opacity $hover-transition;
+}
+
+.MatrixComponent-collapse--title {
+  // stylelint-disable-next-line primer/typography
+  line-height: 20px;
+}
