@@ -48,18 +48,27 @@
             var image = document.getElementsByName("image-swap-2")[0];
             image.src = select.options[select.selectedIndex].value;
         }
-        function copyCode() {
-            const codeElement = document.getElementById("myText");
-            const code = codeElement.innerText;
+        function copyCode(button) {
+            // 获取按钮所在的容器
+            var container = button.parentNode;
 
-            navigator.clipboard.writeText(code)
-                .then(() => {
-                    alert("Code copied to clipboard!");
-                })
-                .catch((error) => {
-                    console.error("Failed to copy code: ", error);
-                });
+            // 从该容器中找到相应的代码块
+            var codeBlock = container.querySelector('.code-block');
+
+            // 复制代码块中的文本
+            var code = codeBlock.innerText;
+            var textarea = document.createElement('textarea');
+            textarea.value = code;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('Copy');
+            textarea.remove();
+
+            // 按钮状态变更为已复制
+            button.classList.add('active');
+            setTimeout(function() { button.classList.remove('active'); }, 2000);
         }
+
     </script>
     <style type="text/css">.new-prompt[data-v-be061d42]{position:fixed;z-index:99999;background:rgba(0,0,0,.6);top:0;left:0;right:0;bottom:0;cursor:auto}.new-prompt dialog[data-v-be061d42]{width:380px;position:absolute;left:50%;transform:translate(-50%,-50%);top:50%;border:none;border-radius:5px;padding:10px 20px;margin:0}.new-prompt p[data-v-be061d42]{margin:20px 0 5px}.new-prompt input[data-v-be061d42]{height:25px}.new-prompt input[data-v-be061d42],.new-prompt textarea[data-v-be061d42]{width:100%;border:1px solid #d9d9d9;border-radius:5px}.new-prompt dialog svg[data-v-be061d42]{float:right;cursor:pointer}.new-prompt button[data-v-be061d42]{border-radius:5px;width:60px;height:28px;margin:20px 10px;cursor:pointer}.cancel-btn[data-v-be061d42]{background:#fff;border:1px solid #d9d9d9}.sure-btn[data-v-be061d42]{border:none;background:#7f85ef;color:#fff}.btn-div[data-v-be061d42]{text-align:right}.pro-title[data-v-be061d42]{font-size:16px;font-weight:600;text-align:center}.input-text[data-v-be061d42]{padding:0 0 0 5px}.textarea-text[data-v-be061d42]{padding:5px 0 0 5px}</style><style type="text/css">.message-box[data-v-3436135a]{position:fixed;top:20px;left:50%;transform:translateX(-50%);z-index:99999;width:80%;padding:10px 20px;border-radius:4px;background-color:#f0f0f0;box-shadow:0 2px 4px rgba(0,0,0,.2)}.message-text[data-v-3436135a]{margin-right:8px}.message-info[data-v-3436135a]{color:#35495e}.message-success[data-v-3436135a]{color:#67c23a;background-color:#f2f9ec}.message-warning[data-v-3436135a]{color:#e6a23c}.message-error[data-v-3436135a]{color:#f56c6c}.el-icon-close[data-v-3436135a]{cursor:pointer;margin-left:8px}</style><style>#ai_assistant .popver[refresh]::after {
         content: "刷新";
@@ -70,21 +79,7 @@
       }#ai_assistant .popver[setting]::after {
            content: "设置";
        }
-    .code-container {
-        position: relative;
-        background-color: #f1f1f1;
-        padding: 10px;
-    }
 
-    .copy-button {
-        position: absolute;
-        top: 0;
-        right: 0;
-        padding: 5px;
-        background-color: #555;
-        color: #fff;
-        cursor: pointer;
-    }
     </style>
 </head>
 
@@ -385,20 +380,16 @@
         <h1>
             Download
         </h1>
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <link rel="stylesheet" type="text/css" href="style.css">
+        </head>
+        <body>
         <br><br>
         <p class="paragraph">
-            You can use the following <a href="https://pan.baidu.com/s/1iWZt3JklcX5iXdQqotY4uA"> BaiduYun link </a> (code:gxlw) , <a href="https://drive.google.com/drive/folders/1s6zUHkyQdCfxIq4OVzCp1CI6-_e4kGtu"> Google Drive </a> and <a href="https://lifehkbueduhk-my.sharepoint.com/personal/15484211_life_hkbu_edu_hk/_layouts/15/onedrive.aspx?id=%2Fpersonal%2F15484211%5Flife%5Fhkbu%5Fedu%5Fhk%2FDocuments%2FIRS&ga=1"> OneDrive </a> to download our dataset.
-            <br> Tips for Google Drive:
-        <ul>
-            <li> <p class="paragraph"> Go to <a href="https://www.oauth.com/playground/" > OAuth 2.0 Playground. </a> </p> </li>
-            <li> <p class="paragraph"> In the Select the Scope box, paste "https://www.googleapis.com/auth/drive.readonly". </p> </li>
-            <li> <p class="paragraph"> Click Authorize APIs and then Exchange authorization code for tokens. </p> </li>
-            <li> <p class="paragraph"> Copy the Access token. </p> </li>
-            <li> <p class="paragraph"> Run in terminal: </p> </li>
-            <pre id="codecell0"><code class="fa-code" id="myText" rows="4" cols="200" > <b> curl -H "Authorization: Bearer ACCESS_TOKEN" https://www.googleapis.com/drive/v3/files/FILE_ID?alt=media -o FILE_NAME </b> </code></pre>
-        </ul>
-
-        <br> <br>
+            You can use the OneDrive  <a href="https://lifehkbueduhk-my.sharepoint.com/personal/15484211_life_hkbu_edu_hk/_layouts/15/onedrive.aspx?id=%2Fpersonal%2F15484211%5Flife%5Fhkbu%5Fedu%5Fhk%2FDocuments%2FIRS&ga=1">link</a> to download our dataset.
+            <br> <br>
         <h1> Usage </h1>
         <br>
         <h2> Dependencies </h2>
@@ -420,87 +411,106 @@
         <p class="paragraph">
             Use the following commands to install the environment in Linux:
         </p>
-        <div class="citation add-top-padding">
-            <h1 id="abstract"> Code </h1>
-            <pre id="codecell0">
-        <code class="fa-code" id="myText" rows="4" cols="200"> <b>
-cd layers_package
-./install.sh
-# install OpenEXR (https://www.openexr.com/)
-sudo apt-get update
-sudo apt-get install openexr
-        </b> </code>
-        </pre>
+        <div class="code-container">
+            <button class="copy-button" onclick="copyCode(this)">
+                <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="copy-icon">
+                    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+                </svg>
+                <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="check-icon">
+                    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+                </svg>
+            </button>
+            <pre class="code-block" align="left"><code>
+cd layers_package <br>
+./install.sh      <br>
+# install OpenEXR (https://www.openexr.com/) <br>
+sudo apt-get update   <br>
+sudo apt-get install openexr <br>
+    </code></pre>
         </div>
 
         <br> <h2> Dataset </h2><br>
         <p class="paragraph">
-            Download IRS dataset from <a href="https://pan.baidu.com/s/1iWZt3JklcX5iXdQqotY4uA"></a> this. Extract zip files and put them in correct folder:
+            Download IRS dataset from <a href="https://pan.baidu.com/s/1VKVVdljNdhoyJ8JdQUCwKQ">BaiduYun</a>. Extract zip files and put them in correct folder:
         </p>
-        <div class="citation add-top-padding">
-            <h1 id="abstract"> Folder </h1>
-            <pre id="codecell0">
-        <code class="fa-code" id="myText" rows="4" cols="200"> <b>
-data
-└── IRSDataset
-    ├── Home
-    ├── Office
-    ├── Restaurant
-    └── Store
-        </b> </code>
-        </pre>
+        <div class="code-container">
+            <button class="copy-button" onclick="copyCode(this)">
+                <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="copy-icon">
+                    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+                </svg>
+                <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="check-icon">
+                    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+                </svg>
+            </button>
+            <pre class="code-block" align="left"><code>
+                ---- pytorch-dispnet ---- data ---- IRSDataset ---- Home<br>
+                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-- Office<br>
+                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-- Restaurant<br>
+                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-- Store<br>
+    </code></pre>
         </div>
 
         <br>  <h2> Train </h2><br>
         <p class="paragraph">
             There are configurations for train in <b>"exp_configs"</b> folder. You can create your own configuration file as samples.
-            As an example, following configuration can be used to train a DispNormNet on IRS dataset:
+            As an example, following configuration can be used to train a DispNormNet on IRS dataset (./exp_configs/dispnormnet.conf):
         </p>
-        <div class="citation add-top-padding">
-            <h1 id="abstract"> ./exp_configs/dispnormnet.conf</h1>
-            <pre id="codecell0">
-        <code class="fa-code" id="myText" rows="4" cols="200"> <b>
-net=dispnormnet
-loss=loss_configs/dispnetcres_irs.json
-outf_model=models/${net}-irs
-logf=logs/${net}-irs.log
+        <div class="code-container">
+            <button class="copy-button" onclick="copyCode(this)">
+                <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="copy-icon">
+                    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+                </svg>
+                <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="check-icon">
+                    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+                </svg>
+            </button>
+            <pre class="code-block" align="left"><code>
+    net=dispnormnet<br>
+    loss=loss_configs/dispnetcres_irs.json<br>
+    outf_model=models/${net}-irs<br>
+    logf=logs/${net}-irs.log<br><br>
 
-lr=1e-4
-devices=0,1,2,3
+    lr=1e-4<br>
+    devices=0,1,2,3<br>
 
-dataset=irs #sceneflow, irs, sintel
-trainlist=lists/IRSDataset_TRAIN.list
-vallist=lists/IRSDataset_TEST.list
+    dataset=irs #sceneflow, irs, sintel<br>
+    trainlist=lists/IRSDataset_TRAIN.list<br>
+    vallist=lists/IRSDataset_TEST.list<br><br>
 
-startR=0
-startE=0
-endE=10
-batchSize=16
-maxdisp=-1
-model=none
-        </b> </code>
-        </pre>
+    startR=0<br>
+    startE=0<br>
+    endE=10<br>
+    batchSize=16<br>
+    maxdisp=-1<br>
+    model=none<br>
+    </code></pre>
         </div>
-        <p class="paragraph">
-            Then, the configuration should be specified in the "train.sh":
-        </p>
-        <div class="citation add-top-padding">
-            <h1 id="abstract"> ./train.sh </h1>
-            <pre id="codecell0">
-        <code class="fa-code" id="myText" rows="4" cols="200"> <b>
-dnn="${dnn:-dispnormnet}"
-source exp_configs/$dnn.conf
 
-python main.py --cuda --net $net --loss $loss --lr $lr \
-               --outf $outf_model --logFile $logf \
-               --devices $devices --batch_size $batchSize \
-               --dataset $dataset --trainlist $trainlist --vallist $vallist \
-               --startRound $startR --startEpoch $startE --endEpoch $endE \
-               --model $model \
-               --maxdisp $maxdisp \
-               --manualSeed 1024 \
-        </b> </code>
-        </pre>
+        <p class="paragraph">
+            Then, the configuration should be specified in the "train.sh" (./train.sh):
+        </p>
+        <div class="code-container">
+            <button class="copy-button" onclick="copyCode(this)">
+                <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="copy-icon">
+                    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+                </svg>
+                <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="check-icon">
+                    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+                </svg>
+            </button>
+            <pre class="code-block" align="left"><code>
+dnn="${dnn:-dispnormnet}"<br>
+    source exp_configs/$dnn.conf<br><br>
+
+    python main.py --cuda --net $net --loss $loss --lr $lr \<br>
+                 &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;--outf $outf_model --logFile $logf \<br>
+                 &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;--devices $devices --batch_size $batchSize \<br>
+                 &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;--dataset $dataset --trainlist $trainlist --vallist $vallist \<br>
+                 &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;--startRound $startR --startEpoch $startE --endEpoch $endE \<br>
+                 &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;--model $model \<br>
+                 &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;--maxdisp $maxdisp \<br>
+                 &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;--manualSeed 1024 \<br>
+    </code></pre>
         </div>
 
         <p class="paragraph">
@@ -512,24 +522,29 @@ python main.py --cuda --net $net --loss $loss --lr $lr \
             There is a script for evaluation with a model from a train
         </p>
         <p class="paragraph">
-            Then, the configuration should be specified in the <b>"train.sh"</b>:
+            Then, the configuration should be specified in the <b>"train.sh"</b> (./detech.sh):
         </p>
-        <div class="citation add-top-padding">
-            <h1 id="abstract"> ./detech.sh </h1>
-            <pre id="codecell0">
-        <code class="fa-code" id="myText" rows="4" cols="200" align="left"> <b>
-dataset=irs
-net=dispnormnet
+        <div class="code-container">
+            <button class="copy-button" onclick="copyCode(this)">
+                <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="copy-icon">
+                    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+                </svg>
+                <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="check-icon">
+                    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+                </svg>
+            </button>
+            <pre class="code-block" align="left"><code>
+    dataset=irs <br>
+    net=dispnormnet<br><br>
 
-model=models/dispnormnet-irs/model_best.pth
-outf=detect_results/${net}-${dataset}/
+    model=models/dispnormnet-irs/model_best.pth<br>
+    outf=detect_results/${net}-${dataset}/<br><br>
 
-filelist=lists/IRSDataset_TEST.list
-filepath=data
+    filelist=lists/IRSDataset_TEST.list<br>
+    filepath=data<br><br>
 
-CUDA_VISIBLE_DEVICES=0 python detecter.py --model $model --rp $outf --filelist $filelist --filepath $filepath --devices 0 --net ${net} --disp-on --norm-on
-        </b> </code>
-        </pre>
+    CUDA_VISIBLE_DEVICES=0 python detecter.py --model $model --rp $outf --filelist $filelist --filepath $filepath --devices 0 --net ${net} --disp-on --norm-on
+            </code></pre>
         </div>
 
         <p class="paragraph">
@@ -540,21 +555,25 @@ CUDA_VISIBLE_DEVICES=0 python detecter.py --model $model --rp $outf --filelist $
 
             If you want to change the output format, you need to modify "detecter.py" and use save function as follow:
         </p>
+        <div class="code-container">
+            <button class="copy-button" onclick="copyCode(this)">
+                <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="copy-icon">
+                    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+                </svg>
+                <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="check-icon">
+                    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+                </svg>
+            </button>
+            <pre class="code-block" align="left"><code>
+    # png<br>
+    skimage.io.imsave(filepath, image)<br><br>
 
-        <div class="citation add-top-padding">
-            <h1 id="abstract"> function </h1>
-            <pre id="codecell0">
-        <code class="fa-code" id="myText" rows="4" cols="200" align="left"> <b>
-# png
-skimage.io.imsave(filepath, image)
+    # pfm<br>
+    save_pfm(filepath, data)<br><br>
 
-# pfm
-save_pfm(filepath, data)
-
-# exr
-save_exr(data, filepath)
-        </b> </code>
-        </pre>
+    # exr<br>
+    save_exr(data, filepath)<br><br>
+            </code></pre>
         </div>
 
         <br>
